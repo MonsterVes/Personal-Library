@@ -20,9 +20,13 @@ def add_book():
             year_obj = pyip.inputDate("Enter publishing year (YYYY-MM-DD): ", formats = ["%Y-%m-%d"])
             year = year_obj.strftime("%Y-%m-%d")
             publisher = input("Enter publisher name: ").capitalize()
+
+            # Select a genre from a menu list
+            
             print("Enter book genre: ")
             genre = pyip.inputMenu(["Action", "Adventure", "Children", "Comedy", "Crime", "Drama", "Fantasy", 
                                     "Historical", "Mystery", "Poetry", "Science", "Sci-Fi"], numbered = True).capitalize()
+            
             pages = pyip.inputInt("Enter number of pages: ", min=3)
             format = pyip.inputChoice(["Paperback", "Hardcover", "E-book", "Audiobook"], 
                                       prompt = "Enter book format (Paperback, Hardcover, E-book, Audiobook): ").capitalize()
