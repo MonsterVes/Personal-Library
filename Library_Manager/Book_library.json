@@ -1,0 +1,62 @@
+{
+    "Test": {
+        "title": "Test",
+        "author": "Test",
+        "isbn": "test",
+        "year": "2016-02-03",
+        "publisher": "Ace",
+        "genre": "Ce",
+        "pages": 23,
+        "format": "E-book",
+        "price": 3.2,
+        "purchase_date": "2016-02-03",
+        "personal_rating": 5,
+        "status": "Read",
+        "notes": "no"
+    },
+    "Test2": {
+        "title": "Test2",
+        "author": "Test2",
+        "isbn": "teste2",
+        "year": "2016-02-03",
+        "publisher": "Ace",
+        "genre": "No",
+        "pages": 303,
+        "format": "Audiobook",
+        "price": 5.0,
+        "purchase_date": "2019-06-03",
+        "personal_rating": 4,
+        "status": "Unread",
+        "notes": "no"
+    },
+    "Test 3": {
+        "title": "Test 3",
+        "author": "T",
+        "isbn": "t",
+        "year": "2016-02-03",
+        "publisher": "Fe",
+        "genre": "Fe",
+        "pages": 63,
+        "format": "Paperback",
+        "price": 6.0,
+        "purchase_date": "2018-05-06",
+        "personal_rating": "5",
+        "status": "Unread",
+        "notes": ""
+    },
+    "To Kill A Mockingbird": {
+        "title": "To Kill A Mockingbird",
+        "author": "Harper Lee",
+        "isbn": 55621,
+        "year": "1986-05-18",
+        "publisher": "Dede",
+        "genre": "Drama",
+        "pages": 280,
+        "format": "Hardcover",
+        "price": 9.3,
+        "purchase_date": "2000-12-23",
+        "personal_rating": "5",
+        "status": "In progress",
+        "notes": "no"
+    }
+}
