@@ -58,5 +58,20 @@
         "personal_rating": "5",
         "status": "In progress",
         "notes": "no"
+    },
+    "Some": {
+        "title": "Some",
+        "author": "Some",
+        "isbn": 38485,
+        "year": "2020-02-08",
+        "publisher": "Jdjd",
+        "genre": "Comedy",
+        "pages": 43,
+        "format": "E-book",
+        "price": 43.0,
+        "purchase_date": "2025-02-02",
+        "personal_rating": "2",
+        "status": "Read",
+        "notes": "no"
     }
 }

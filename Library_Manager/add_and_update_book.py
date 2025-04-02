@@ -66,5 +66,5 @@ def add_book():
             print(f"An error occurred: {e}. Please try again.")
 
 
-
+add_book()
 

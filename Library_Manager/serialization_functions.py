@@ -1,7 +1,7 @@
 import json
+import os
 
-
-def add_to_json_book_file(book, file_name="Book_library.json"):
+def add_to_json_book_file(book, file_name="../Data_files/Book_library.json"):
     """
     Function that adds the book info to a JSON file where all the books will be stored
     """
