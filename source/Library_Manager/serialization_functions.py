@@ -1,8 +1,7 @@
 import json
 import os
+from Book_class import DATA_PATH
 
-
-DATA_PATH = "../Data_files"
 
 def add_to_json_book_file(book):
     """

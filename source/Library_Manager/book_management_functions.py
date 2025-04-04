@@ -1,5 +1,5 @@
-from Book_class import Book
-from serialization_functions import add_to_json_book_file, DATA_PATH
+from Book_class import Book, DATA_PATH
+from serialization_functions import add_to_json_book_file
 import pyinputplus as pyip
 import json
 import os
@@ -8,8 +8,10 @@ import os
 def add_book():
     """
     ADD BOOK TO LIBRARY
-    Gather book info input from the user. Create a new_book instance of the Book object and add it to the Book_library.json file.
+    Gather book info input from the user to add as Book instance attributes. Create a new_book instance of the Book object 
+    and add it to the Book_library.json file.
     """
+    print("\n~-~-~ Please enter book info: ~-~-~")
     while True:
         try:
             # Gather input
@@ -35,14 +37,14 @@ def add_book():
                 # Start from the begining in case the publishing year has been inputet with an error.
                 print("\n***Invalid purchase date.***\n Purchase date is prior to Publishing year. Please re-enter book info.\n")
                 continue
-            personal_rating = pyip.inputChoice(["1","2","3","4","5", "N/A"], prompt = "Enter personal rating (1-5 or N/A): ").upper()
             status = pyip.inputChoice(["Read", "Want to read", "In progress", "Unread"], 
                                       prompt = "Enter read status (Read, Want to read, In progress, Unread): ").capitalize()
+            personal_rating = pyip.inputChoice(["1","2","3","4","5", "N/A"], prompt = "Enter personal rating (1-5 or N/A): ").upper()
             notes = input("Enter any additional notes: ")
 
             # Initialize new book object 
             new_book = Book(title, author, isbn, year, publisher, genre, pages, format, price, 
-                    purchase_date, personal_rating, status, notes)
+                    purchase_date, status, personal_rating, notes)
             
             # Add the new book to the Book_library.json file
             add_to_json_book_file(new_book)
@@ -57,15 +59,17 @@ def add_book():
 def view_library():
     """
     VIEW BOOKS IN LIBRARY
-    List all books from Book_library.json file.
+    List all books by title and authir from Book_library.json file. Gives the total count of books that are currently in the library.
     """
+    print("\n~-~-~ Books in Library: ~-~-~\n")
     try:
         filename = "Book_library.json"
         file_path = os.path.join(DATA_PATH, filename)
         with open(file_path, "r") as file:  
             view_books = json.load(file)
         for book in view_books["Books"]:
-            print(f"{book["title"]} by {book["author"]}")
+            print(f"'{book["title"]}' by {book["author"]}")
+        
     except FileNotFoundError as e:
             print(f"File not found: {e}. Please try again.")
     except json.JSONDecodeError as e:
@@ -73,12 +77,16 @@ def view_library():
     except Exception as e:
             print(f"An error occurred: {e}. Please try again.")
 
+    print(f"\nTotal Books in Library: {Book.count_of_books}\n")
 
-def view_book(book_title):
+
+def search_book(book_title):
     """
     SEARCH FOR A BOOK IN LIBRARY
-    If book is found in Book_library.json file, print book info.
+    Searched by book title in titles in Book_Library.json .If book is found in Book_library.json file, 
+    the function prints book info.
     """
+    print("\n~-~-~ Search Results: ~-~-~\n")
     try:
         filename = "Book_library.json"
         file_path = os.path.join(DATA_PATH, filename)
@@ -100,4 +108,12 @@ def view_book(book_title):
         print(f"Error decoding JSON: {e}. Please check the file format.")
     except Exception as e:
         print(f"An error occurred: {e}. Please try again.")    
+
+# TODO
+def delete_book():
+    pass
+
+#TODO
+def edit_book():
+    pass
             

@@ -1,8 +1,30 @@
+import os
+import json
+
+
+DATA_PATH = "../Data_files"
+count_of_books = "Count_of_books.json"
+file_path = os.path.join(DATA_PATH, count_of_books)
+
 class Book:
-    number_of_books = 0
+    count_of_books = 0
+
+    @classmethod
+    def load_count_of_books(cls):
+        try:
+            with open(file_path, "r") as file:
+                cls.count_of_books = json.load(file)
+        except FileNotFoundError:
+            cls.count_of_books = 0
+
+    @classmethod
+    def save_count_of_books(cls):
+        with open(file_path, "w") as file:
+            json.dump(cls.count_of_books, file)
+
 
     def __init__(self, title, author, isbn, year, publisher, genre, pages, format, price, purchase_date,
-                personal_rating, status, notes,
+                status, personal_rating, notes
                 ):
         self.title = title
         self.author = author
@@ -14,11 +36,13 @@ class Book:
         self._format = format
         self.price = price
         self.purchase_date = purchase_date
-        self._personal_rating = personal_rating
         self._status = status
+        self._personal_rating = personal_rating
         self.notes = notes
 
-        Book.number_of_books += 1
+        Book.count_of_books += 1
+        Book.save_count_of_books()
+
 
     def __str__(self):
         return (
@@ -32,8 +56,8 @@ class Book:
             f"Format: {self.format}\n"
             f"Price EUR: {self.price}\n"
             f"Purchase date: {self.purchase_date}\n"
-            f"Personal rating: {self.personal_rating}\n"
             f"Status: {self.status}\n"
+            f"Personal rating: {self.personal_rating}\n"
             f"Notes: {self.notes}\n"
         )
 
@@ -48,10 +72,10 @@ class Book:
             "pages": self.pages,
             "format": self.format,
             "price": self.price,
-            "purchase_date": self.purchase_date,
-            "personal_rating": self.personal_rating,
+            "purchase date": self.purchase_date,
             "status": self.status,
-            "notes": self.notes,
+            "personal rating": self.personal_rating,
+            "notes": self.notes
         }
 
     """Checks for allowed Personal ratings"""
