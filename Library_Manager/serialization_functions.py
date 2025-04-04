@@ -1,12 +1,18 @@
 import json
 import os
 
-def add_to_json_book_file(book, file_name="../Data_files/Book_library.json"):
+def add_to_json_book_file(book):
     """
     Function that adds the book info to a JSON file where all the books will be stored
     """
     try:
-        with open(file_name, "r") as file:
+        directory = "../Data_files"
+        filename = "Book_library.json"
+        file_path = os.path.join(directory, filename)
+        
+        if not os.path.isdir(directory):
+                os.mkdir(directory)
+        with open(file_path, "r") as file:
             book_data = json.load(file)
     except (FileNotFoundError, json.JSONDecodeError):
         book_data = {}
@@ -15,7 +21,7 @@ def add_to_json_book_file(book, file_name="../Data_files/Book_library.json"):
 
     book_data[book.title] = book.to_dict()
 
-    with open(file_name, "w") as file:
+    with open(file_path, "w") as file:
         json.dump(book_data, file, indent=4)
 
     print("-~" * 25)
