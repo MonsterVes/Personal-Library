@@ -27,7 +27,7 @@ def execute_user_action(action):
     if action == "1":
         bm.view_library()
     elif action == "2":
-        search_book = input("Enter book title you are searching for: ")
+        search_book = input("\nEnter book title you are searching for: ")
         bm.search_book(search_book)
     elif action == "4":
         print("\n*Statistics* functionality is under construction")

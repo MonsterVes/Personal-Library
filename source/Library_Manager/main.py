@@ -15,9 +15,9 @@ def main():
     """
     Book.load_count_of_books()
 
-    print("~-"*30)
+    print("~-"*16)
     print("Welcome To Your Personal Library")
-    print("~-"*30)
+    print("~-"*16)
     time.sleep(0.6)
     
     call_main_menu = True
