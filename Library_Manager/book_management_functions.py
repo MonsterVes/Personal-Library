@@ -54,9 +54,6 @@ def add_book():
             print(f"An error occurred: {e}. Please try again.")
 
 
-# add_book()
-
-
 def view_library():
     """
     VIEW BOOKS IN LIBRARY
@@ -76,8 +73,6 @@ def view_library():
     except Exception as e:
             print(f"An error occurred: {e}. Please try again.")
 
-
-# view_library()
 
 def view_book(book_title):
     """
@@ -106,7 +101,3 @@ def view_book(book_title):
     except Exception as e:
         print(f"An error occurred: {e}. Please try again.")    
             
-
-                
-
-view_book("testa")
