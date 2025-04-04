@@ -1,20 +1,9 @@
 class Book:
-    def __init__(
-        self,
-        title,
-        author,
-        isbn,
-        year,
-        publisher,
-        genre,
-        pages,
-        format,
-        price,
-        purchase_date,
-        personal_rating,
-        status,
-        notes,
-    ):
+    number_of_books = 0
+
+    def __init__(self, title, author, isbn, year, publisher, genre, pages, format, price, purchase_date,
+                personal_rating, status, notes,
+                ):
         self.title = title
         self.author = author
         self.isbn = isbn
@@ -28,6 +17,8 @@ class Book:
         self._personal_rating = personal_rating
         self._status = status
         self.notes = notes
+
+        Book.number_of_books += 1
 
     def __str__(self):
         return (
