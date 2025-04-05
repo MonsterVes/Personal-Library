@@ -110,7 +110,7 @@ def search_book(book_title):
     except Exception as e:
         print(f"An error occurred: {e}. Please try again.")    
 
-# TODO
+
 def delete_book():
     try:
         book_to_delete = input("Enter the title of the book you want to delete: ")
@@ -129,8 +129,6 @@ def delete_book():
                     print("-~" * 25)
                     print(f"{book_to_delete} has been removed from the Library")
                     print("-~" * 25) 
-                    # Ensure count_of_books is loaded correctly before decrementing
-                    Book.load_count_of_books()  # Add this line to load the current count
                     Book.count_of_books -= 1
                     Book.save_count_of_books()
                     break 
@@ -147,15 +145,14 @@ def delete_book():
         print("Error decoding JSON. Please check the file format.")
     except Exception as e:
         print(f"An error occurred: {e}. Please try again.")
-    
-
-
-
-
-
-     
+        
 
 #TODO
-def edit_book():
-    pass
-            
+# def edit_book():
+#     try:
+#         book_to_edit = input("Enter the title of the book you want to edit: ")
+#         filename = "Book_library.json"
+#         data_path = os. path.join(DATA_PATH, filename)
+#         with open(data_path, "r") as file:
+#             books_view = json.load(file)
+           
