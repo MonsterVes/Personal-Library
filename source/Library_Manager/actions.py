@@ -41,7 +41,7 @@ def execute_user_action(action):
         elif sub_action == "2":
             print("\n*Edit Book* functionality is under construction")
         elif sub_action == "3":
-            print("\n*Delete Book* functionality is under construction")
+            bm.delete_book()
         elif sub_action == "4":
             menus.main_menu()
         

@@ -31,36 +31,6 @@
             "notes": "Excitin"
         },
         {
-            "title": "Book1",
-            "author": "Author1 ",
-            "isbn": 1234567,
-            "year": "2012-02-02",
-            "publisher": "Publisher 1",
-            "genre": "Comedy",
-            "pages": 56,
-            "format": "Paperback",
-            "price": 6.0,
-            "purchase_date": "2024-01-19",
-            "personal_rating": "3",
-            "status": "Read",
-            "notes": "No"
-        },
-        {
-            "title": "Title 3",
-            "author": "Author Three",
-            "isbn": 3456678,
-            "year": "2005-06-29",
-            "publisher": "Publisher 4",
-            "genre": "Action",
-            "pages": 310,
-            "format": "E-book",
-            "price": 23.0,
-            "purchase_date": "2018-04-28",
-            "personal_rating": "5",
-            "status": "Read",
-            "notes": "No"
-        },
-        {
             "title": "Some Title",
             "author": "Some Author",
             "isbn": 3009058,
@@ -104,6 +74,21 @@
             "status": "Read",
             "personal rating": "5",
             "notes": "Great book"
+        },
+        {
+            "title": "Test13",
+            "author": "Author 13",
+            "isbn": 34567890,
+            "year": "2015-06-05",
+            "publisher": "Publisher 15",
+            "genre": "Historical",
+            "pages": 459,
+            "format": "Hardcover",
+            "price": 25.0,
+            "purchase date": "2018-08-19",
+            "status": "Read",
+            "personal rating": "4",
+            "notes": "never again"
         }
     ]
 }

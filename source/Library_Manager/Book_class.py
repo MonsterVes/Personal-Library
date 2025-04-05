@@ -86,7 +86,7 @@ class Book:
 
     @personal_rating.setter
     def personal_rating(self, personal_rating):
-        if personal_rating not in ["1", "2", "3", "4", "5"]:
+        if personal_rating not in ["1", "2", "3", "4", "5", "N/A"]:
             raise ValueError("Invalid rating. Allowed ratings: 1, 2, 3, 4, 5")
         self._personal_rating = personal_rating
 
@@ -98,7 +98,7 @@ class Book:
 
     @format.setter
     def format(self, format):
-        if format not in ["Paperback", "Hardcover", "E-book", "Audiobook"]:
+        if format not in ["Paperback", "Hardcover", "E-book", "Audiobook"].lower():
             raise ValueError(
                 "Invalid Format. Allowed formats: Paperback, Hardcover, E-book, Audiobook"
             )
@@ -112,7 +112,7 @@ class Book:
 
     @status.setter
     def status(self, status):
-        if status not in ["Read", "Want to read", "In progress", "Unread"]:
+        if status not in ["Read", "Want to read", "In progress", "Unread"].lower():
             raise ValueError(
                 "Invalid read status. Allowed statuses: Read, Want to read, In progress, Unread"
             )

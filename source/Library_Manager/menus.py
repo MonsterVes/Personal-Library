@@ -10,7 +10,7 @@ def main_menu():
 
     print("\nPlease choose an action:\n\n~-~-~ 1. View Books   ~-~-~\n~-~-~ 2. Search Book  ~-~-~")
     print("~-~-~ 3. Manage Books ~-~-~\n~-~-~ 4. Statistics   ~-~-~\n~-~-~ 5. Exit Library ~-~-~\n")
-    user_action = pyip.inputChoice(["1","2","3","4","5"], prompt = "Your choice (1-5): ")
+    user_action = pyip.inputChoice(["1","2","3","4","5"], prompt = "Your choice (1-5): \n")
     return user_action
 
 
@@ -26,7 +26,7 @@ def sub_menu():
     time.sleep(0.6)
     print("\nPlease choose an action:\n\n~-~-~ 1. Add Book    ~-~-~\n~-~-~ 2. Edit Book   ~-~-~")
     print("~-~-~ 3. Delete Book ~-~-~\n~-~-~ 4. Main Menu   ~-~-~\n")
-    user_action = pyip.inputChoice(["1","2","3","4"], prompt = "Your choice (1-4): ")
+    user_action = pyip.inputChoice(["1","2","3","4"], prompt = "Your choice (1-4): \n")
     return user_action
     
 

@@ -3,6 +3,7 @@ from serialization_functions import add_to_json_book_file
 import pyinputplus as pyip
 import json
 import os
+import menus
 
 
 def add_book():
@@ -111,7 +112,48 @@ def search_book(book_title):
 
 # TODO
 def delete_book():
-    pass
+    try:
+        book_to_delete = input("Enter the title of the book you want to delete: ")
+        filename = "Book_library.json"
+        file_path = os.path.join(DATA_PATH, filename)
+        with open(file_path, "r") as file:
+            view_books = json.load(file)
+        is_found = False
+        for book in view_books["Books"]:
+            # print(book)
+            if book["title"] == book_to_delete:
+                confirm_deletion = input(f"\nAre you sure you want to delete *{book["title"]}* by {book["author"]} from PersonalLibrary? (Yes/No): ").lower()
+                if confirm_deletion == "yes":
+                    view_books["Books"].remove(book)
+                    is_found = True
+                    print("-~" * 25)
+                    print(f"{book_to_delete} has been removed from the Library")
+                    print("-~" * 25) 
+                    # Ensure count_of_books is loaded correctly before decrementing
+                    Book.load_count_of_books()  # Add this line to load the current count
+                    Book.count_of_books -= 1
+                    Book.save_count_of_books()
+                    break 
+                else:
+                    menus.sub_menu()
+        if not is_found:
+            print(f"\nCan't find {book_to_delete} in Personal Library\n")
+
+        with open(file_path, "w") as file:
+            json.dump(view_books, file, indent = 4)
+    except FileNotFoundError:
+        print("The library file does not exist. Please add books to the library first.")
+    except json.JSONDecodeError:
+        print("Error decoding JSON. Please check the file format.")
+    except Exception as e:
+        print(f"An error occurred: {e}. Please try again.")
+    
+
+
+
+
+
+     
 
 #TODO
 def edit_book():

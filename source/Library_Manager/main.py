@@ -24,8 +24,8 @@ def main():
     while call_main_menu:
         user_action = menus.main_menu()
         actions.execute_user_action(user_action)
-        continue_actions = input("\nBack to Main Menu (y) or Exit Library (n)? ").lower()
-        if continue_actions == "y":
+        continue_actions = input("\nBack to Main Menu (m) or Exit Library (any key)? ").lower()
+        if continue_actions == "m":
             continue
         else:
             call_main_menu = False
