@@ -1,10 +1,10 @@
 from Book_class import Book
-import book_management_functions as bm
+from book_management_functions import Book_Manager
 import menus
 import sys
 
 
-def execute_user_action(action):
+def execute_user_action(action, book_manager: Book_Manager):
     """
     Executes a specific action based on the user's input.
     Parameters:
@@ -25,23 +25,24 @@ def execute_user_action(action):
     """
 
     if action == "1":
-        bm.view_library()
+        book_manager.view_library()
     elif action == "2":
         search_book = input("\nEnter book title you are searching for: ")
-        bm.search_book(search_book)
+        book_manager.search_book(search_book)
     elif action == "4":
         print("\n*Statistics* functionality is under construction")
     elif action == "5":
-        Book.save_count_of_books()
+        # Book.save_count_of_books()
+        book_manager.save_books_on_exit()
         sys.exit("\nGoodbye! See you soon!")
     else:
         sub_action = menus.sub_menu()
         if sub_action == "1":
-            bm.add_book()
+            book_manager.add_book()
         elif sub_action == "2":
             print("\n*Edit Book* functionality is under construction")
         elif sub_action == "3":
-            bm.delete_book()
+            book_manager.delete_book()
         elif sub_action == "4":
             menus.main_menu()
         
