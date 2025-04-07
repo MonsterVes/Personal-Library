@@ -1,5 +1,5 @@
 from Book_class import Book, DATA_PATH
-from serialization_functions import add_to_json_book_file
+# from serialization_functions import add_to_json_book_file
 import pyinputplus as pyip
 import json
 import os
@@ -9,8 +9,8 @@ import menus
 # FILE_PATH = os.path.join(DATA_PATH2, "Book_library.json")
 
 #Check filepath
-Filename = "Book_library.json"
-FILE_PATH = os.path.join(DATA_PATH, Filename)
+filename = "Book_library.json"
+FILE_PATH = os.path.join(DATA_PATH, filename)
 
 
 class Book_Manager:
