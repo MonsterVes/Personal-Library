@@ -3,11 +3,11 @@ import json
 
 
 DATA_PATH = "../Data_files"
-# count_of_books = "Count_of_books.json"
-# file_path = os.path.join(DATA_PATH, count_of_books)
+count_of_books = "Count_of_books.json"
+file_path = os.path.join(DATA_PATH, count_of_books)
 
 class Book:
-    count_of_books = 0
+    # count_of_books = 0
 
     # @classmethod
     # def load_count_of_books(cls):
@@ -17,10 +17,10 @@ class Book:
     #     except FileNotFoundError:
     #         cls.count_of_books = 0
 
-    # @classmethod
-    # def save_count_of_books(cls):
-    #     with open(file_path, "w") as file:
-    #         json.dump(cls.count_of_books, file)
+    @classmethod
+    def save_count_of_books(cls):
+        with open(file_path, "w") as file:
+            json.dump(cls.count_of_books, file)
 
 
     def __init__(self, title, author, isbn, year, publisher, genre, pages, format, price, purchase_date,
@@ -40,8 +40,8 @@ class Book:
         self._personal_rating = personal_rating
         self.notes = notes
 
-        Book.count_of_books += 1
-        Book.save_count_of_books()
+        # Book.count_of_books += 1
+        # Book.save_count_of_books()
 
 
     def __str__(self):
