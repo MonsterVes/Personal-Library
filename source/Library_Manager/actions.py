@@ -1,4 +1,3 @@
-# from Book_class import Book
 from book_management_functions import Book_Manager
 import menus
 import sys
@@ -30,7 +29,8 @@ def execute_user_action(action, book_manager: Book_Manager):
         search_book = input("\nEnter book title you are searching for: ")
         book_manager.search_book(search_book)
     elif action == "4":
-        print("\n*Statistics* functionality is under construction")
+        print(f"Total Books: {book_manager.books_count()}")
+        print(f"Total Cost: {book_manager.books_total_cost()}")
     elif action == "5":
         # Book.save_count_of_books()
         book_manager.save_books_on_exit()
@@ -40,7 +40,7 @@ def execute_user_action(action, book_manager: Book_Manager):
         if sub_action == "1":
             book_manager.add_book()
         elif sub_action == "2":
-            print("\n*Edit Book* functionality is under construction")
+            book_manager.edit_book()
         elif sub_action == "3":
             book_manager.delete_book()
         elif sub_action == "4":
