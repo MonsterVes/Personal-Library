@@ -10,12 +10,15 @@ A Python-based application to manage your personal library. This project allows 
 - Statistics: View the total number of books and their total cost.
 
 ## Usage
-1. Run the main program:
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
 
+2. Run the main program:
    ```bash
    python source/Library_Manager/main.py
 
-2. Follow the on-screen prompts to interact with the library:
+3. Follow the on-screen prompts to interact with the library:
 
 - View your library
 - Search for books
